@@ -39,13 +39,13 @@ readFile方法用于异步读取文件:
 fs.readFile(fileName,"utf8",function(err,text){});
 
 读取文件:
-fs.readFile(文件名,function(error,data){})
+  fs.readFile(文件名,function(error,data){})
 写文件:
-fs.writeFile(文件名,内容,function(error){})
+  fs.writeFile(文件名,内容,function(error){})
 重命名:
-fs.rename(原始文件,新文件,(err)=>{
-console.log(err);
-})
+  fs.rename(原始文件,新文件,(err)=>{
+    console.log(err);
+  })
 ```
 
 ## querystring(处理query字符串模块):
@@ -53,11 +53,11 @@ console.log(err);
 var GET={};
 var querystring=require('querystring');
 if(req.url.indexOf('?')!=-1){
-var arr=req.url.split('?');
-var url=arr[0];
-GET=querystring.parse(arr[1]);
+  var arr=req.url.split('?');
+  var url=arr[0];
+  GET=querystring.parse(arr[1]);
 }else{
-var url=req.url;
+  var url=req.url;
 }
 console.log(url,GET);
 ```
@@ -82,12 +82,12 @@ end 	 全部到达
 const querystring=require('querystring');
 var str='';
 req.on('data',function(data){
-str+=data;
+  str+=data;
 });
 req.on('end',function(){
-console.log(str);
-var POSTquerystring.parse(str);
-console.log(POST)
+  console.log(str);
+  var POSTquerystring.parse(str);
+  console.log(POST)
 })
 ```
 
@@ -123,12 +123,12 @@ console.log(str)
 const crypto=require('crypto');
 
 module.exports={
-MD5_SUFFIX:'lang_strive@163.com',
-md5:function(str){  //传需要加密的文件
-var obj=crypto.createHash('md5');
-obj.updata('123456');
-return obj.digest('hex');
-}
+  MD5_SUFFIX:'lang_strive@163.com',
+  md5:function(str){  //传需要加密的文件
+    var obj=crypto.createHash('md5');
+    obj.updata('123456');
+    return obj.digest('hex');
+  }
 }
 ```
 > 校验:
